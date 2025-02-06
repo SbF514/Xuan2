@@ -1,0 +1,90 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #1B1F3B; /* Midnight Blue */
+  color: #D6C7E8; /* Light Lavender */
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+/* Header styles */
+header {
+  background-color: #5A3E8C; /* Mystic Purple */
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #FFC857; /* Golden Amber */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #EDEDED; /* Moonlight Silver */
+}
+
+/* Navigation Menu */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #FFC857; /* Golden Amber */
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #EDEDED; /* Moonlight Silver */
+}
+
+/* Main content styles */
+main {
+  background: rgba(90, 62, 140, 0.1); /* Soft Purple Overlay */
+  padding: 40px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 700px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #D6C7E8;
+}
+
+/* Footer styles */
+footer {
+  background-color: #5A3E8C;
+  color: #EDEDED;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* Buttons for future interactivity */
+button {
+  background-color: #FFC857;
+  color: #1B1F3B;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #EDEDED;
+  color: #5A3E8C;
+}
