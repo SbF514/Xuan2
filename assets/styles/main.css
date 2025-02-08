@@ -1,90 +1,124 @@
-/* Reset basic styles */
+/* Main CSS for Taoist Website */
+
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+  font-family: 'Noto Serif', serif;
+  color: #000;
+  background-color: #fff;
+}
+
 body {
-  font-family: 'Playfair Display', serif;
-  background-color: #1B1F3B; /* Midnight Blue */
-  color: #D6C7E8; /* Light Lavender */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   line-height: 1.6;
-  padding: 0 20px;
+  min-height: 100vh;
 }
 
-/* Header styles */
+/* Header Styles */
 header {
-  background-color: #5A3E8C; /* Mystic Purple */
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid #FFC857; /* Golden Amber */
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  color: #EDEDED; /* Moonlight Silver */
-}
-
-/* Navigation Menu */
 nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   list-style: none;
-  margin-top: 10px;
 }
 
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: #FFC857; /* Golden Amber */
+nav a {
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s;
+  font-weight: bold;
+  color: #000;
+  padding: 0.5rem 1rem;
 }
 
-nav ul li a:hover {
-  color: #EDEDED; /* Moonlight Silver */
+nav a:hover {
+  background-color: #eee;
+  border-radius: 5px;
 }
 
-/* Main content styles */
-main {
-  background: rgba(90, 62, 140, 0.1); /* Soft Purple Overlay */
-  padding: 40px;
-  text-align: center;
-  border-radius: 15px;
-  margin: 40px auto;
-  max-width: 700px;
+/* Section and Page Content */
+section {
+  width: 90%;
+  max-width: 1200px;
+  padding: 2rem 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Noto Serif', serif;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
 p {
-  font-size: 1.1rem;
-  color: #D6C7E8;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  color: #555;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
-  background-color: #5A3E8C;
-  color: #EDEDED;
+  width: 100%;
   text-align: center;
-  padding: 15px;
-  margin-top: 40px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
 }
 
-/* Buttons for future interactivity */
+/* Icons Styling */
+.icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.5rem;
+}
+
+/* Minimal Button Style */
 button {
-  background-color: #FFC857;
-  color: #1B1F3B;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #000;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #EDEDED;
-  color: #5A3E8C;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Taoist Symbol Layouts */
+.symbol-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.symbol {
+  font-size: 3rem;
+  color: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  section {
+    padding: 1rem;
+  }
 }
