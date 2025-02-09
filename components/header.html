@@ -4,137 +4,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/styles/main.css">
-  <title>Header Component</title>
+  <title>Header</title>
   <style>
-    /* Header Visibility and Artistic Styling */
+    /* Artistic header styles */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: linear-gradient(to right, #f0f0f0, #e6e6e6);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      padding: 1rem 0;
-    }
-
-    /* Expanding Hover Detection Area */
-    #hover-detection {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      z-index: 999;
-    }
-
-    nav {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent);
+      padding: 1rem 2rem;
+      color: white;
       display: flex;
       justify-content: space-between;
-      padding: 1rem 2rem;
+      align-items: center;
+      z-index: 1000;
+      transition: top 0.3s;
     }
 
-    .logo {
-      font-family: 'Noto Serif', serif;
-      font-size: 1.5rem;
-      color: #333;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    /* Placeholder for Special Font or Icon */
-    .logo::before {
-      content: '\玄²';
-      font-size: 2rem;
-      margin-right: 0.5rem;
-    }
-
-    ul {
+    .nav-links {
       list-style: none;
       display: flex;
       gap: 2rem;
     }
 
-    li {
-      font-family: 'Noto Sans', sans-serif;
-      position: relative;
-    }
-
-    a {
+    .nav-links a {
       text-decoration: none;
-      color: #555;
-      padding: 0.7rem 1.5rem;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-      display: block;
+      color: lightgrey;
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s, background-color 0.3s;
     }
 
-    /* Show English Translation on Hover */
-    a::after {
-      content: attr(data-translation);
-      position: absolute;
-      top: 120%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.9rem;
-      background-color: #ddd;
-      padding: 0.2rem 0.5rem;
-      border-radius: 5px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+    .nav-links a:hover {
+      color: black;
+      background-color: lightgrey;
+      border-radius: 10px;
     }
 
-    li:hover a::after {
-      opacity: 1;
+    /* Show header only at the top or when hovering */
+    .header-hidden {
+      top: -80px;
     }
 
-    /* Artistic Button UI */
+    /* Artistic Button Styling */
     button {
-      background: linear-gradient(to right, #bbb, #888);
+      background: linear-gradient(135deg, #ddd, #bbb);
       border: none;
-      color: white;
-      padding: 1rem 1.8rem;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
       font-size: 1rem;
       cursor: pointer;
-      border-radius: 20px;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
     }
 
     button:hover {
-      background: #444;
+      background: #333;
+      color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
 <body>
+  <header id="top-header">
+    <div class="logo">Xuan2 Taoism</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About</a></li>
+        <li><a href="../pages/library.html">Library</a></li>
+        <li><a href="../pages/mountain.html">Mountain</a></li>
+        <li><a href="../pages/medicine.html">Medicine</a></li>
+        <li><a href="../pages/destiny.html">Destiny</a></li>
+        <li><a href="../pages/palmistry.html">Palmistry</a></li>
+        <li><a href="../pages/divination.html">Divination</a></li>
+      </ul>
+    </nav>
+    <button>Contact</button>
+  </header>
+  <main>
+    <section>
+      <h1>Welcome to Xuan2 Taoism</h1>
+      <p>Explore the mysteries of Taoist teachings and practices.</p>
+    </section>
+  </main>
+  <script>
+    // Hide and show header functionality
+    const header = document.getElementById('top-header');
+    let lastScrollY = window.scrollY;
 
-<div id="hover-detection"></div>
-<header>
-  <nav>
-    <div class="logo">玄 squared</div>
-    <ul>
-      <li><a href="../index.html" data-translation="Home">玄</a></li>
-      <li><a href="../pages/about.html" data-translation="About Taoism">道</a></li>
-      <li><a href="../pages/library.html" data-translation="Library">典</a></li>
-      <li><a href="../pages/mountain.html" data-translation="Mountain">山</a></li>
-      <li><a href="../pages/medicine.html" data-translation="Medicine">医</a></li>
-      <li><a href="../pages/destiny.html" data-translation="Destiny">命</a></li>
-      <li><a href="../pages/palmistry.html" data-translation="Palmistry">相</a></li>
-      <li><a href="../pages/divination.html" data-translation="Divination">卜</a></li>
-    </ul>
-  </nav>
-</header>
-
-<script>
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    const detectionArea = document.querySelector('#hover-detection');
-    if (window.scrollY > 10) {
-      detectionArea.style.display = 'none';
-    } else {
-      detectionArea.style.display = 'block';
-    }
-  });
-</script>
-
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
 </body>
 </html>

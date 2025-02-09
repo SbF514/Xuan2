@@ -3,28 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fortunetelling Website</title>
-  <link rel="stylesheet" href="./assets/styles/main.css">
+  <link rel="stylesheet" href="assets/styles/main.css">
+  <style>
+    body {
+      padding-top: 20px;
+      transition: padding-top 0.3s;
+    }
+
+    /* Header Push-down Effect and Hover Reappearance */
+    iframe {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 120px; /* Increased vertical length */
+      border: none;
+      transition: transform 0.3s;
+    }
+
+    iframe.hidden {
+      transform: translateY(-100%);
+    }
+  </style>
+  <title>Xuan2 Taoism</title>
 </head>
 <body>
-  <header>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
-    <h1>Welcome to the Fortunetelling Hub</h1>
-    <nav>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="pages/fortunetelling/taoist.html">Taoist Fortunetelling</a></li>
-        <li><a href="pages/library/library.html">Mythological Library</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Include header from external file -->
+  <iframe id="header-iframe" src="components/header.html"></iframe>
+
   <main>
-    <p>Explore the mystical world of fortunetelling and ancient knowledge!</p>
+    <section>
+      <p>Placeholder content for introduction text. Explore the philosophy and teachings of Taoism.</p>
+    </section>
+
+    <!-- Placeholder text repeated 10 times -->
+    <section>
+      <p>Placeholder block content 1. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
+    <section>
+      <p>Placeholder block content 2. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
+    <section>
+      <p>Placeholder block content 3. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
+    <section>
+      <p>Placeholder block content 4. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
+    <section>
+      <p>Placeholder block content 5. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
+    <section>
+      <p>Placeholder block content 6. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
+    <section>
+      <p>Placeholder block content 7. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
+    <section>
+      <p>Placeholder block content 8. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
+    <section>
+      <p>Placeholder block content 9. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
+    <section>
+      <p>Placeholder block content 10. Delve into spiritual balance and the Taoist way of life.</p>
+    </section>
   </main>
-  <footer>
-    <p>© 2025 Fortunetelling Hub</p>
-  </footer>
-  <script src="./scripts/main.js"></script>
+  <script>
+    const headerIframe = document.getElementById('header-iframe');
+    let isHoveringHeader = false;
+
+    // Show header when at the top of the page
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition < 50) {
+        headerIframe.classList.remove('hidden');
+        document.body.style.paddingTop = '150px';
+      } else if (!isHoveringHeader) {
+        headerIframe.classList.add('hidden');
+        document.body.style.paddingTop = '20px';
+      }
+    });
+
+    document.addEventListener('mousemove', (event) => {
+      if (event.clientY < 100 && window.scrollY > 50) {
+        // Mouse near top, show header with push-down effect
+        headerIframe.classList.remove('hidden');
+        document.body.style.paddingTop = '150px';
+      }
+    });
+
+    headerIframe.addEventListener('mouseenter', () => {
+      isHoveringHeader = true;
+      headerIframe.classList.remove('hidden');
+      document.body.style.paddingTop = '150px';
+    });
+
+    headerIframe.addEventListener('mouseleave', () => {
+      isHoveringHeader = false;
+      if (window.scrollY > 50) {
+        headerIframe.classList.add('hidden');
+        document.body.style.paddingTop = '20px';
+      }
+    });
+  </script>
 </body>
 </html>
